@@ -18,10 +18,12 @@ jobs:
     - run:
         name: Terraform plan
         command: terraform plan
+        path: TF-Modules/EC2
 
     - run:
         name: Terraform Apply
         command: terraform apply -auto-approve
+        path: TF-Modules/EC2
 
 workflows:
   version: 2
