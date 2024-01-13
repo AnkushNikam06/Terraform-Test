@@ -5,7 +5,7 @@ jobs:
     docker:
     - image: hashicorp/terraform:1.6.5
 
-    working_directory: ~/Terraform-Test/TF-Modules/EC2
+    #working_directory: ~/Terraform-Test/TF-Modules/EC2
 
     steps:
     - checkout
@@ -13,6 +13,7 @@ jobs:
     - run:
         name: Terraform Init
         command: terraform init
+        path: TF-Modules/EC2
 
     - run:
         name: Terraform plan
