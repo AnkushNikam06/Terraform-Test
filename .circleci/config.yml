@@ -1,36 +1,36 @@
-version: 2.1
+# version: 2.1
 
-jobs:
-  terraform:
-    docker:
-    - image: hashicorp/terraform:1.6.5
+# jobs:
+#   terraform:
+#     docker:
+#     - image: hashicorp/terraform:1.6.5
 
-    #working_directory: ~/Terraform-Test/TF-Modules/EC2
+#     #working_directory: ~/Terraform-Test/TF-Modules/EC2
 
-    steps:
-    - checkout
+#     steps:
+#     - checkout
 
-    - run:
-        name: Terraform Init
-        command: terraform init
-        path: TF-Modules/EC2
+#     - run:
+#         name: Terraform Init
+#         command: terraform init
+#         path: TF-Modules/EC2
 
-    - run:
-        name: Terraform plan
-        command: terraform plan
-        path: TF-Modules/EC2
+#     - run:
+#         name: Terraform plan
+#         command: terraform plan
+#         path: TF-Modules/EC2
 
-    - run:
-        name: Terraform Apply
-        command: terraform apply -auto-approve
-        path: TF-Modules/EC2
+#     - run:
+#         name: Terraform Apply
+#         command: terraform apply -auto-approve
+#         path: TF-Modules/EC2
 
-workflows:
-  version: 2
-  main:
-    jobs:
-    - terraform:
-        filters:
-          branches:
-            only:
-            - main
+# workflows:
+#   version: 2
+#   main:
+#     jobs:
+#     - terraform:
+#         filters:
+#           branches:
+#             only:
+#             - main
